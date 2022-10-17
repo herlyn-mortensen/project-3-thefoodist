@@ -1,11 +1,11 @@
 <template>
   <div id="app">
+    <navigationBar/>
     <img alt="Vue logo" src="./assets/logo.png">
     <headingText text = "Sample text"/>
     <Basic msg="Welcome to Your Vue.js App"/>
     <appButton text="Register"/>
     <reviewCard height= "100px" width="100px"/>
-    <navigationBar/>
   </div>
 </template>
 
@@ -35,6 +35,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

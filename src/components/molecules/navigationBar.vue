@@ -1,5 +1,4 @@
 <template>
-    <div>
         <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
@@ -16,20 +15,16 @@
             </div>
         </div>
         </nav>
-    </div>
 </template>
  
 <script>
 export default {
   name: 'navigationBar',
-  props: {
-    
-  }
 }
 </script>
  
 <style>
-.title {
-  font-family: Montserrat;
+.navbar-brand {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 </style>
