@@ -1,23 +1,29 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
+    <headingText text = "Sample text"/>
     <Basic msg="Welcome to Your Vue.js App"/>
     <appButton text="Register"/>
     <reviewCard height= "100px" width="100px"/>
+    <navigationBar/>
   </div>
 </template>
 
 <script>
 import Basic from './components/Basic.vue'
+import headingText from './components/atom/headingText.vue'
 import appButton from './components/atom/appButton.vue'
 import reviewCard from './components/atom/reviewCard.vue'
+import navigationBar from './components/molecules/navigationBar.vue'
 
 export default {
   name: 'App',
   components: {
     Basic,
+    headingText,
     appButton,
-    reviewCard
+    reviewCard,
+    navigationBar
   }
 }
 </script>
