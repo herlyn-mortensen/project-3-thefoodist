@@ -18,13 +18,7 @@ export default {
 @font-face {
   font-family: 'Yummy';
   src:local("Yummy"),
-  url(../../fonts/Yummy.ttf) format("truetype")
+  url() format("truetype")
 }
-
-h1 {
-  font-family: "Yummy";
-}
-
-
 
 </style>

@@ -14,4 +14,7 @@ export default {
 .title {
   font-family: Verdana;
 }
+div {
+  background-color: #f8f9fa;
+}
 </style>
