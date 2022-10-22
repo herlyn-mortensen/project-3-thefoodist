@@ -6,7 +6,6 @@ import HomePage from "@/components/HomePage";
 import FindReview from "@/components/FindReview";
 import LogInBusiness from "@/components/LogInBusiness";
 import LogInUser from "@/components/LogInUser";
-import RegisterBusiness from "@/components/RegisterBusiness";
 import RegisterUser from "@/components/RegisterUser";
 import WriteReview from "@/components/WriteReview";
 
@@ -35,11 +34,6 @@ const router = new Router({
     path: "/LogInUser",
     name: "LogInUser",
     component: LogInUser,
-   },
-   {
-    path: "/RegisterBusiness",
-    name: "RegisterBusiness",
-    component: RegisterBusiness,
    },
    {
     path: "/RegisterUser",

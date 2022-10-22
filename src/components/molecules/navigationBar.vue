@@ -29,14 +29,14 @@
         </div>
          <div class="d-flex">
           <appButton
-            class="register"
-            text="Business"
-            link="/RegisterBusiness"
+            class="navButton"
+            text="Register"
+            link="/Register"
           />
           <appButton
-            class="register"
-            text="Login/Register"
-            link="/RegisterBusiness"
+            class="navButton"
+            text="Login"
+            link="/Login"
           />
           </div>
       </div>
@@ -87,7 +87,7 @@ a:active {
   height: 40px;
 }
 
-.register {
+.navButton {
   margin: 10px;
   display: flex;
 }
