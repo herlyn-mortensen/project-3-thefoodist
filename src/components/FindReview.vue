@@ -1,7 +1,26 @@
 <template>
-  <div>
-    <h1 class="title">Find Review</h1>
-  </div>
+<div>
+  <h1>Search</h1>
+    <form>
+      <label>Restaurant Name</label>
+      <input type="text" class="form-control" name="restaurant"/>
+
+      <div>
+          <input type="submit" class="btn btn-dark mt-3" value="Search"/>
+      </div>
+    </form>
+
+    <form>
+        <div>
+            <input type="submit" class="btn btn-dark mt-3" value="Delete"/>
+        </div>
+    </form>
+    <form>
+        <div>
+            <input type="submit" class="btn btn-light border-dark mt-3" value="Edit"/>
+        </div>
+    </form>
+</div>
 </template>
  
 <script>

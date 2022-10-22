@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <h1 class="title">Home</h1>
+  <div id="homepage">
+      <img alt="hero image" src="../assets/logo.png">
+      <img alt="hero image" src="../assets/text.png">
   </div>
 </template>
  
@@ -14,7 +15,9 @@ export default {
 .title {
   font-family: Verdana;
 }
-div {
-  background-color: #f8f9fa;
+#homepage {
+  background-color: #F8F8F8;
+  height: 100vh;
 }
+
 </style>

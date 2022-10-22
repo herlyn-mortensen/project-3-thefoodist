@@ -15,10 +15,5 @@ export default {
  
 <style>
 
-@font-face {
-  font-family: 'Yummy';
-  src:local("Yummy"),
-  url() format("truetype")
-}
 
 </style>

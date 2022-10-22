@@ -1,29 +1,22 @@
 <template>
   <div id="app">
-    <router-view></router-view>
     <navigationBar/>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <headingText text = "Sample text"/>
-    <HomePage msg="Welcome to Your Vue.js App"/>
-    <appButton text="Register"/>
-    <reviewCard height= "100px" width="100px"/>
+    <router-view></router-view>
+    
   </div>
 </template>
 
 <script>
-import HomePage from '../components/HomePage.vue'
-import headingText from './components/atom/headingText.vue'
-import appButton from './components/atom/appButton.vue'
-import reviewCard from './components/atom/reviewCard.vue'
+
+//Pages import
+
+// Component imports
+
 import navigationBar from './components/molecules/navigationBar.vue'
 
 export default {
   name: 'App',
   components: {
-    HomePage,
-    headingText,
-    appButton,
-    reviewCard,
     navigationBar
   }
 }
@@ -31,10 +24,25 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Montserrat-Regular;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: local("Montserrat-Regular"),
+    url(./fonts/Montserrat-Regular.ttf)format("truetype"),
+      url(./fonts/Montserrat-Regular.otf)format("opentype");
+}
+
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: local("Montserrat-Bold"),
+    url(./fonts/Montserrat-Bold.ttf)format("truetype"),
+      url(./fonts/Montserrat-Bold.otf)format("opentype");
+}
+
 </style>
