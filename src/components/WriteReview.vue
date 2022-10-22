@@ -63,6 +63,7 @@ export default {
   height: 100vh;
 }
 
+
 .title {
   font-family: Verdana;
 }
