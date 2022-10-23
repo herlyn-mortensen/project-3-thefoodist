@@ -31,12 +31,12 @@
           <appButton
             class="navButton"
             text="Register"
-            link="/Register"
+            link="/RegisterUser"
           />
           <appButton
             class="navButton"
             text="Login"
-            link="/Login"
+            link="/LoginUser"
           />
           </div>
       </div>
