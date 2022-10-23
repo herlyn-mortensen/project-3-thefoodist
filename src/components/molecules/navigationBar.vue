@@ -87,8 +87,5 @@ a:active {
   height: 40px;
 }
 
-.navButton {
-  margin: 10px;
-  display: flex;
-}
+
 </style>

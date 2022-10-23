@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="register-user">
     <div>
       <label>Username</label>
       <input type="text" v-model="username" />
@@ -61,8 +61,16 @@ export default {
   },
 };
 </script>
+
+
 <style scoped>
+
+#register-user {
+  height: 100vh;
+  background-color: #F8F9FA;
+}
 .error {
   color: red;
 }
+
 </style>

@@ -5,33 +5,33 @@
     <div class="write-review-section">
       <form class="filloutform">
         <div>
-            <label>Restaurant</label>
+            <label class="label-write">Restaurant:</label>
             <input type="text" name="restaurant" class="form-control"/>
         </div>
         <div>
-            <label>Title:</label>
+            <label class="label-write">Title:</label>
             <input type="text" name="title" class="form-control"/>
         </div> 
         <div>
-            <label>Date:</label>
+            <label class="label-write">Date:</label>
             <input type="text" name="date" class="form-control"/>
         </div> 
         <div>
-            <label>Cuisine:</label>
+            <label class="label-write">Cuisine:</label>
             <input type="text" name="cuisine" class="form-control"/>
         </div>
         <div>
-            <label>Food ordered:</label>
+            <label class="label-write">Food ordered:</label>
             <input type="text" name="foodordered" class="form-control"/>
         </div>
         <div class="section">
-            <label>Write Review</label>
+            <label class="label-write">Write Review</label>
             <div>
             <textarea class="form-control-review" name="review" rows="4" cols="50"></textarea>
             </div>
         </div>
         <div>
-            <label>Ratings</label>  
+            <label class="label-write">Ratings</label>  
             <input type="radio" class="form-check-input" name="ratings" value="1"/>
             <label class="form-check-label"><i class="fa-solid fa-star"></i></label>
             <input type="radio" class="form-check-input" name="ratings" value="2" />
@@ -63,6 +63,13 @@ export default {
   height: 100vh;
 }
 
+.label-write {
+  display: flex;
+}
+
+.form-check-input {
+  display: inline-block;
+}
 
 .title {
   font-family: Verdana;
