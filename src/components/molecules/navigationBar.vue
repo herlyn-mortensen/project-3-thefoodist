@@ -30,13 +30,13 @@
          <div class="d-flex">
           <appButton
             class="navButton"
-            text="Register"
-            link="/RegisterUser"
+            text="Login"
+            link="/LoginUser"
           />
           <appButton
             class="navButton"
-            text="Login"
-            link="/LoginUser"
+            text="Register"
+            link="/RegisterUser"
           />
           </div>
       </div>
