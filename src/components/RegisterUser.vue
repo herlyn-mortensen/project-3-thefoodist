@@ -1,7 +1,7 @@
 <template>
   <div id="register-user" style="text-align: left">
     <div class="boundary">
-      <h1>Register</h1>
+      <h1 style="text-align:center">Register</h1>
       <div>
         <label class="inputLabel">Username</label>        
         <input
@@ -19,7 +19,18 @@
         <input
           class="inputText"
           type="text"
-          placeholder="Your name.."
+          placeholder="Your password"
+          v-model="password"
+        />
+        <div class="error" v-if="passwordOk === false && buttonHaveBeenClicked">
+          Password must have at least one special characters
+        </div>
+
+        <label class="inputLabel">Confirm Password</label>
+        <input
+          class="inputText"
+          type="text"
+          placeholder="confirm your password"
           v-model="password"
         />
         <div class="error" v-if="passwordOk === false && buttonHaveBeenClicked">
@@ -116,13 +127,13 @@ export default {
 }
 
 .submitButton{
-  margin-top: 10px;
-  background-color:  white;
+  margin-top: 20px;
+  background-color:  black;
   font-family: 'Montserrat-Regular';
   font-weight: 1.5rem;
   font-weight: bold;
-  border-radius: 40px;
-  color: black;
+  border-radius: 8px;
+  color: white;
   border: 2px black solid;  
   padding: 5px;
   height:48px;
