@@ -1,10 +1,13 @@
 <template>
-    <div class="card" style= {width:{width},height:{height}}>
-      <img src="" class="card-img-top" alt="...">
+    <div class="card">
+      <div class="image-container">
+        <img src="" class="card-img-top" alt="...">
+      </div>
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h2 class="card-title">Review title: {{reviewTitle}}</h2>
+
+        <p class="card-text">{{review}}</p>
+        <a href="#" class="btn btn-primary">View Review</a>
       </div>
     </div>
 </template>
@@ -14,7 +17,12 @@ export default {
   name: 'reviewCard',
   props: {
     height: String,
-    width: String
+    cardWidth: String,
+    restaurantName:String,
+    reviewTitle:String,
+    cuisine:String,
+    foodOrdered:String,
+    review:String,
   }
 }
 </script>
@@ -22,5 +30,11 @@ export default {
 <style>
 .title {
   font-family: Verdana;
+}
+.image-container{
+  background-color: aquamarine;
+}
+.card{
+  width: auto;
 }
 </style>

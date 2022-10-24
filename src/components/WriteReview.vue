@@ -3,7 +3,9 @@
     <h2 class="write-review-section">Write Review</h2>
 
     <div class="write-review-section">
+      
       <form class="filloutform">
+        <button class="uploadBtn">Upload image<img /></button>
         <div>
             <label class="label-write">Restaurant:</label>
             <input type="text" name="restaurant" class="form-control"/>
@@ -61,10 +63,15 @@ export default {
 
 #writereviewpage {
   height: 100vh;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right:auto;
 }
 
 .label-write {
   display: flex;
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
 .form-check-input {
@@ -77,5 +84,16 @@ export default {
 .write-review-section {
     display: flex !important;
     justify-content: center !important;
+}
+.uploadBtn{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 5px;
+  border: none;
+  border-radius: 8px;
+  height: 48px;
+  width: 100%;
+  background: black;
+  color: white;
 }
 </style>
