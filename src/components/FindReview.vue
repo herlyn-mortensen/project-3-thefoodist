@@ -23,6 +23,28 @@
             />
           </div>
         </div>
+
+        <!-- Cards Section -->
+    <div class="reviewContainer">
+      <h1>Reviews</h1>
+
+      <div class="card-container">
+        <div class="card" v-for="(item, index) in reviews" v-bind:key="index">
+          <div class="image-container">
+            <img src="" class="card-img-top" alt="..." />
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">{{ item.reviewTitle }}</h2>
+            <p class="card-text">{{ item.date }}</p>
+            <p class="card-text">{{ item.cuisine }}</p>
+            <p class="card-text">{{ item.foodOrdered }}</p>
+            <p class="card-text">{{ item.review }}</p>
+            <a href="#" class="btn btn-primary">View Review</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
       </div>
     </div>
   </div>
@@ -31,6 +53,33 @@
 <script>
 export default {
   name: "FindReview",
+  data: function () {
+    return {
+      reviews: [
+        {
+          reviewTitle: "Title 1",
+          date: "Date here",
+          cuisine: "Cuisine 1",
+          foodOrdered: "food ordered1",
+          review: "REVASDAAJFGLKDJFGLKFDJSSKG",
+        },
+        {
+          reviewTitle: "Title 2",
+          date: "Date here",
+          cuisine: "Cuisine 2",
+          foodOrdered: "food ordered 2",
+          review: "REVASDAAJFGLKDJFGLKFDJSSKG",
+        },
+        {
+          reviewTitle: "Title 3",
+          date: "Date here",
+          cuisine: "Cuisine 3",
+          foodOrdered: "food ordered 3 ",
+          review: "REVASDAAJFGLKDJFGLKFDJSSKG",
+        },
+      ],
+    };
+  },
 };
 </script>
 

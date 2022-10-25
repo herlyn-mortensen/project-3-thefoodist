@@ -3,6 +3,7 @@
     <img alt="hero image" src="../assets/logo.png" />
     <img alt="hero image" src="../assets/text.png" />
 
+<!-- Cards Section -->
     <div class="reviewContainer">
       <h1>Reviews</h1>
 
@@ -22,6 +23,8 @@
         </div>
       </div>
     </div>
+
+
   </div>
 </template>
 
@@ -68,9 +71,10 @@ export default {
 }
 #homepage {
   background-color: #f8f8f8;
-  height: 100vh;
-  
+  height: 100vh;  
 }
+
+<!-- Cards -->
 .reviewCntainer {
   max-width: 900px;
 }
