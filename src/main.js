@@ -12,7 +12,7 @@ import RegisterUser from "@/components/RegisterUser";
 import WriteReview from "@/components/WriteReview";
 
 
-Vue.config.productionTip = false
+Vue.config.productionTip = true
 Vue.use(Router);
 
 const router = new Router({

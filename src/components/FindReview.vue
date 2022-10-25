@@ -57,21 +57,21 @@ export default {
     return {
       reviews: [
         {
-          reviewTitle: "Title 1",
+          title: "Title 1",
           date: "Date here",
           cuisine: "Cuisine 1",
           foodOrdered: "food ordered1",
           review: "REVASDAAJFGLKDJFGLKFDJSSKG",
         },
         {
-          reviewTitle: "Title 2",
+          title: "Title 2",
           date: "Date here",
           cuisine: "Cuisine 2",
           foodOrdered: "food ordered 2",
           review: "REVASDAAJFGLKDJFGLKFDJSSKG",
         },
         {
-          reviewTitle: "Title 3",
+          title: "Title 3",
           date: "Date here",
           cuisine: "Cuisine 3",
           foodOrdered: "food ordered 3 ",
