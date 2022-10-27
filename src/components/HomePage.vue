@@ -3,7 +3,7 @@
     <img alt="hero image" src="../assets/logo.png" />
     <img alt="hero image" src="../assets/text.png" />
 
-<!-- Cards Section -->
+    <!-- Cards Section -->
     <div class="reviewContainer">
       <h1>Reviews</h1>
 
@@ -23,16 +23,14 @@
         </div>
       </div>
     </div>
-
-
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-  // import reviewCard from "./atom/reviewCard.vue";
-import {Server} from '../../config'
-const BASE_URL = Server.BASE_URL
+import axios from "axios";
+// import reviewCard from "./atom/reviewCard.vue";
+import { Server } from "../../config";
+const BASE_URL = Server.BASE_URL;
 
 export default {
   name: "HomePage",
@@ -40,14 +38,12 @@ export default {
     // reviewCard,
   },
   data: function () {
-    
-  axios({
+    axios({
       url: BASE_URL + "/review",
       method: "GET",
-    })
-    .then(async res => {
-      this.reviews = res.data
-    })
+    }).then(async (res) => {
+      this.reviews = res.data;
+    });
     return {
       reviews: [
         // {
@@ -83,7 +79,7 @@ export default {
 }
 #homepage {
   background-color: #f8f8f8;
-  height: 100vh;  
+  height: 100vh;
 }
 
 /* Cards */
@@ -97,7 +93,7 @@ export default {
   border: 2px solid #000000;
 }
 
-.card-container{
+.card-container {
   text-align: left;
   max-width: 900px;
   margin-left: auto;

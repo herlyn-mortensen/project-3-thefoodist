@@ -24,17 +24,17 @@
           </div>
         </div>
 
-        <!-- Cards Section -->
+   <!-- Cards Section -->
     <div class="reviewContainer">
       <h1>Reviews</h1>
 
       <div class="card-container">
         <div class="card" v-for="(item, index) in reviews" v-bind:key="index">
           <div class="image-container">
-            <img src="" class="card-img-top" alt="..." />
+            <img :src="item.imageUrl" class="image" alt="..." />
           </div>
           <div class="card-body">
-            <h2 class="card-title">{{ item.reviewTitle }}</h2>
+            <h2 class="card-title">{{ item.title }}</h2>
             <p class="card-text">{{ item.date }}</p>
             <p class="card-text">{{ item.cuisine }}</p>
             <p class="card-text">{{ item.foodOrdered }}</p>
@@ -51,32 +51,28 @@
 </template>
 
 <script>
+import axios from 'axios';
+  // import reviewCard from "./atom/reviewCard.vue";
+import {Server} from '../../config'
+const BASE_URL = Server.BASE_URL
+
 export default {
   name: "FindReview",
+  components: {
+    // reviewCard,
+  },
   data: function () {
+    
+  axios({
+      url: BASE_URL + "/review",
+      method: "GET",
+    })
+    .then(async res => {
+      this.reviews = res.data
+    })
     return {
       reviews: [
-        {
-          title: "Title 1",
-          date: "Date here",
-          cuisine: "Cuisine 1",
-          foodOrdered: "food ordered1",
-          review: "REVASDAAJFGLKDJFGLKFDJSSKG",
-        },
-        {
-          title: "Title 2",
-          date: "Date here",
-          cuisine: "Cuisine 2",
-          foodOrdered: "food ordered 2",
-          review: "REVASDAAJFGLKDJFGLKFDJSSKG",
-        },
-        {
-          title: "Title 3",
-          date: "Date here",
-          cuisine: "Cuisine 3",
-          foodOrdered: "food ordered 3 ",
-          review: "REVASDAAJFGLKDJFGLKFDJSSKG",
-        },
+        
       ],
     };
   },
