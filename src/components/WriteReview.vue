@@ -112,7 +112,8 @@
 <script>
 import Uploadcare from 'uploadcare-vue'
 import axios from 'axios'
-const BASE_URL = "https://5000-herlynmorte-foodistexpr-9qhiwlq9imy.ws-us72.gitpod.io"
+import {Server} from '../../config'
+const BASE_URL = Server.BASE_URL
 
 export default {
   name: "WriteReview",

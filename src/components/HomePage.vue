@@ -31,8 +31,8 @@
 <script>
 import axios from 'axios';
   // import reviewCard from "./atom/reviewCard.vue";
-const BASE_URL = "https://5000-herlynmorte-foodistexpr-9qhiwlq9imy.ws-us72.gitpod.io"
- 
+import {Server} from '../../config'
+const BASE_URL = Server.BASE_URL
 
 export default {
   name: "HomePage",
@@ -86,7 +86,7 @@ export default {
   height: 100vh;  
 }
 
-<!-- Cards -->
+/* Cards */
 .reviewCntainer {
   max-width: 900px;
 }
