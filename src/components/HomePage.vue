@@ -38,8 +38,9 @@ export default {
     // reviewCard,
   },
   data: function () {
+    console.log(BASE_URL)
     axios({
-      url: BASE_URL + "/review",
+      url: BASE_URL + "/review",      
       method: "GET",
     }).then(async (res) => {
       this.reviews = res.data;

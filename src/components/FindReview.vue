@@ -35,11 +35,25 @@
           </div>
           <div class="card-body">
             <h2 class="card-title">{{ item.title }}</h2>
+            <h3 class="card-title">{{ item.restaurant }}</h3>
             <p class="card-text">{{ item.date }}</p>
             <p class="card-text">{{ item.cuisine }}</p>
             <p class="card-text">{{ item.foodOrdered }}</p>
-            <p class="card-text">{{ item.review }}</p>
-            <a href="#" class="btn btn-primary">View Review</a>
+            
+            <!-- Stars rating -->
+            <div style="display:flex">
+            <p>Rating: </p>
+            <div      v-if="item.ratings==1" class="card-text"><i class="fa-solid fa-star"></i></div>
+            <div v-else-if="item.ratings==2" class="card-text"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <div v-else-if="item.ratings==3" class="card-text"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <div v-else-if="item.ratings==4" class="card-text"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <div v-else-if="item.ratings==5" class="card-text"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>                        
+            </div>
+            <p class="card-text">{{ item.review }}</p>            
+            
+            <input type="submit" class="btn btn-dark mt-3 submitButton" value="Delete" />
+            <textarea class="commentbox" />
+            <input type="submit" class="btn btn-dark mt-3 submitButton" value="Comment"/>
           </div>
         </div>
       </div>
@@ -111,5 +125,13 @@ export default {
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+}
+.image{
+  max-width: 100%;
+}
+.commentbox{
+  margin-top:20px;
+  
+  width:100%;
 }
 </style>
