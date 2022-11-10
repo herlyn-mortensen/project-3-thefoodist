@@ -29,7 +29,7 @@
       <button class="submitButton"
         text="Login"
         link=""
-        v-on:click="regsiter">Login
+        v-on:click="login">Login
       </button>
       
       
@@ -39,6 +39,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+import { BASE_URL } from '../../prod.env';
 
 export default {
   data: function () {
@@ -75,13 +77,28 @@ export default {
       }
     },
   },
-  components: {
-    
-  },
+  components: {},
   methods: {
-    regsiter: function () {
+    login: async function () {
+      try {
+        const result = await axios({
+          method: 'POST',
+          url: BASE_URL + '/user/login',
+          data: {
+            email: this.username,
+            password: this.password
+          }
+        })
+        // Set persistence
+        localStorage.setItem('accessToken', result.data.accessToken)
+        return alert('User logged in')
+      } catch(error) {
+        console.log(error.response.data)
+        if (error.response.data.name === 'CREDENTIALS_NOT_FOUND')
+          return alert('User not found')
+      }
       this.buttonHaveBeenClicked = true;
-    },
+    }
   },
 };
 </script>
