@@ -58,9 +58,9 @@ Since the website runs on Vue 2, there were some added steps in order to run the
 
 | USER STORIES | ACCEPTANCE CRITERIA(S) |
 | ---- | ----- |
-| As a researcher, I would like to see how the guests gets affected by their overall dining experience.| Reviews are displayed per restaurant that is registered in the site. Users can state what they think was good or what was bad about their experience. |
+| As a researcher, I would like to see how the guests gets affected by their overall dining experience.| Reviews are displayed per restaurant that is registered in the site. Users can state what they think was good or what was bad about their experience and upload a photo.|
 | As a government agent, I would like to see which restaurants are highly rated as the food and beverage industry businesses also helps the country's economy and tourism.| Site provides data per restaurant and shows which one's have 5-star ratings.|
-| As a tourist, I would like to see which restaurant is worth the visit and can provide us which best recommendation for food.| The site asks the users which food they ordered and what they think about it. It'll be easy for the user to know which dish to try.|
+| As a tourist, I would like to see which restaurant is worth the visit and can provide us which best recommendation for food.| The site asks the users which food they ordered, what they think about it and upload a photo. It'll be easy for the user to know which dish to try.|
 |As a citizen, I would like to see my own country's best restaurants.| Site provides search options so the users can easily see or check if the restaurant they're interested in is actually worth the visit.|
 
 ### TEST CASES
@@ -87,11 +87,8 @@ Since the website runs on Vue 2, there were some added steps in order to run the
     - "cors": "^2.8.5",
     - "dotenv": "^16.0.2",
     - "express": "^4.18.1",
-    - "handlebars-helpers": "^0.10.0",
-    - "hbs": "^4.2.0",
     - "jsonwebtoken": "^8.5.1",
     - "mongodb": "^4.9.0",
-    - "wax-on": "^1.2.2",
     - "yarn": "^1.22.19"
   - MongoDB
   - HTML, CSS and Bootstrap
