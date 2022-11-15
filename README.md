@@ -65,16 +65,23 @@ Since the website runs on Vue 2, there were some added steps in order to run the
 
 ### TEST CASES
 
-| CATERGORY | INPUT/ACTIONS | OUTPUT/ERRORS|
-| :---: | :---: | :---:|
-| OVERALL | Mobile Responsive Check | Charts are responsive with change of screen sizes.|
-| CHART FUNCTION | On load | Displays empty chart structure, does not show any default country.|
-| | Dropdown button filtering | Show different countries with different data.|
-| | | Shows the correct data per country.|
-| | Hovering across the chart. | Will show numeric data of the chart.|
-| Nav Bar | Hover | Arrow turns to a pointer icon.|
-| | On press | User is led to another page. Single page application is applied on the first page, symptoms and prevention page.|
-| | Responsive | Navigation bar turns into a burger icon.|
+| TEST CASE | TEST CASE DESCRIPTION | TEST STEPS | EXPECTED RESULT |
+| :---: | :---: | :---:| :---: |
+| 1. | Mobile Responsive Check | 1. Use the Toggle device toolbar option available in the developer tools of the site and change the screen sizes.| Navigation bar turns into a burger icon. |
+| 2. | Write a review | 1. Click on "Write a review" button.| Review should show up on both the site and on mongoDB "restaurant reviews" collection.|
+|  |  | 2. Complete form and submit.| |
+| 3. | Upload image | 1. Click on "Write a review" button.| Photo should show up on both the site and on mongoDB "restaurant reviews" collection.|
+|  |  | 2. Click upload image button.||
+| | |3. Drag & drop any files or choose a local file.||
+| | |4. Click "Done" and proceed with filling out the whole review form.||
+| 4. | Search Review | 1. Click on "Find Restaurant" button.| Restaurant should show up upon hitting search button.|
+|  |  | 2. Type in restaurant name.||
+|  |  | 2. Hit search button.||
+| 5. | Log-in or register | 1. Click on Log-in or Register.| When log-in or registration is a success, it should lead to home page.|
+|  |  | 2. Type in username and password.||
+|  |  | 3. When registering, username and password should contain special characters, otherwise an error will show.||
+
+
 
 ### PLATFORM USED
 
