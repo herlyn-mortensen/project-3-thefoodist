@@ -70,6 +70,7 @@ For the bugs and limitations,the site that the /'review'/:reviewID url which is 
 - Github for CI/CD
 - Gitpod.io
 - Dependencies used:
+  - Vue 2
   - NodeJS 
   - NodeJS depencies: 
     - "cors": "^2.8.5",
