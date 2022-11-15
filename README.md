@@ -1,3 +1,7 @@
+![Landing](https://user-images.githubusercontent.com/91460556/201992819-5ff75e8f-76f3-4cd3-b9d7-699ea32b595f.png)
+
+
+
 ### PROJECT OVERVIEW
 
 Potential customers will always put their trust in other customers before the establishment. That's the allure of social proof marketing. While the business's promotional and advertising activities will undoubtedly bring in new customers, nothing beats the support of existing customers who can attest to the quality of the products and experience.
@@ -18,22 +22,22 @@ This site targets food lovers and it focuses on online reviews of restaurants ar
 - The site gives the number reviews per restaurant. As well as write, edit and delete their own reviews. Users are also able to comment to reviews.
 - Users can select which restaurant they want to check.
 3. Structure
-- Sites contain live data of Covid-19 confirmed cases and vaccine rates.
-- The confirmed cases data can be viewed when clicking the “Check Countries” button on the start page, which can then be filtered by selecting which country the user wants to check.
-- Vaccine updates can be viewed on the navigation bar.
-- Information about the symptoms as well as prevention can also be found in the navigation bar.
+- Sites contain data of every user reviews about their restaurant experience.
+- The data of the reviews can be viewed when clicking the “Find Restaurant” button on the start page, which can then be filtered by selecting which restaurant the user wants to check.
+- Users can also log in or register an account.
+-
 4. Skeleton
 - Elements are designed on multiple pages format with navigation bar.
 - Users will first see a landing page with the website logo and illustration up front.
 - Users will also see a navigation bar with the website logo. Navigation bar turns into a burger button for mobile use.
-- Vaccine update page on the navigation bar contains data about the vaccination percentage rate per country.
-- Symptoms page on the navigation bar contains text information about symptoms of Covid-19.
-- Prevention page on the navigation bar contains text information about preventive measures towards Covid-19.
+- "Write a review" button on the navigation bar leads the user into a form they have to fill out in order to give a review to a restaurant.
+- "Find restaurant" button on the navigation bar leads the user to search for a restaurant they want to view.
 - Information and data are all easy to navigate and view as it follows proper website format. 
+- 
 5. Surface
 - Fonts used are Abril Fatface and Poppins as the ease of reading is the most important.
-- Red color signifies virus and alertness. It was used for the primary color of the site/app.
-- Font awesome icons are also used to designate specific elements such as green bullet check points.
+- Black and white signifies classic vintage design. It was used for the primary color of the site/app.
+- Font awesome icons are also used to designate specific elements such as star ratings.
 - Illustrations are also used to convey the text information better.
 
 ### FEATURES
