@@ -63,6 +63,20 @@ Since the website runs on Vue 2, there were some added steps in order to run the
 | As a tourist, I would like to see which restaurant is worth the visit and can provide us which best recommendation for food.| The site asks the users which food they ordered, what they think about it and upload a photo. It'll be easy for the user to know which dish to try.|
 |As a citizen, I would like to see my own country's best restaurants.| Site provides search options so the users can easily see or check if the restaurant they're interested in is actually worth the visit.|
 
+### TESTING
+
+1. Test that user can sign in or log in
+      - From the home page, click on the 'Login' button
+      - Fill in a valid username and password and click on the 'Login'  button
+      - The user should be redirected to the home page
+
+
+2. Test user registering an invalid username and/or password
+      - From the home page, click on the 'Register' button
+      - FIll in a valid username but an invalid password, and click on the 'Register' button
+      - The user should be informed that the login has failed, and stated what is needed to successfully register.
+
+
 ### TEST CASES
 
 | TEST CASE | TEST CASE DESCRIPTION | TEST STEPS | EXPECTED RESULT |
