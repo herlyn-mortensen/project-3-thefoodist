@@ -14,18 +14,24 @@ This site targets food lovers and it focuses on online reviews of restaurants ar
 
 **FIGMA [DESIGN](https://www.figma.com/file/DCI4Nlu5kR6pCmxHsUSTxm/Project-3?node-id=0%3A1)** :tent:
 
+#### TAKE NOTE!
+
+As the site runs on Vue 2. In order to view the website live, please follow these steps:
+
 ### FIVE PLANES OF UX/UI
 
 1. Strategy
 - The site exists to show restaurant reviews, users will be able to view reviews as well as write one per restaurant. Data should be both accessible for website and mobile use.
+
 2. Scope
 - The site gives the number reviews per restaurant. As well as write, edit and delete their own reviews. Users are also able to comment to reviews.
 - Users can select which restaurant they want to check.
+
 3. Structure
 - Sites contain data of every user reviews about their restaurant experience.
 - The data of the reviews can be viewed when clicking the “Find Restaurant” button on the start page, which can then be filtered by selecting which restaurant the user wants to check.
 - Users can also log in or register an account.
--
+
 4. Skeleton
 - Elements are designed on multiple pages format with navigation bar.
 - Users will first see a landing page with the website logo and illustration up front.
@@ -33,7 +39,7 @@ This site targets food lovers and it focuses on online reviews of restaurants ar
 - "Write a review" button on the navigation bar leads the user into a form they have to fill out in order to give a review to a restaurant.
 - "Find restaurant" button on the navigation bar leads the user to search for a restaurant they want to view.
 - Information and data are all easy to navigate and view as it follows proper website format. 
-- 
+
 5. Surface
 - Fonts used are Abril Fatface and Poppins as the ease of reading is the most important.
 - Black and white signifies classic vintage design. It was used for the primary color of the site/app.
@@ -46,16 +52,16 @@ The sites main feature is to the collection of restaurant reviews - the users ca
 
 ### LIMITATIONS
 
-For the bugs and limitations,the site that the /'review'/:reviewID url which is part of the "edit" feature - is not responding to the css link I created, making it look messy. Lastly, the .env file which was placed on the .gitignore is still showing on this repository. 
+Since the website runs on Vue 2, there were some added steps in order to run the website live. Lastly, the .env file which was placed on the .gitignore is still showing on this repository. 
 
 ### USER STORIES
 
 | USER STORIES | ACCEPTANCE CRITERIA(S) |
 | ---- | ----- |
-| As a researcher, I would like to see how a country is managing the pandemic and gather data for my own research.| Charts displayed must be able to update based on a range of days. |
-| As a government agent, I would like to see the different sets of Covid-19 data collected and updated so that I can use it as a basis for preventive measures and decisions towards new policy and/or policy changes in terms of public health.| Site should provide visualization from data collected in the form of a chart, wherein it is easy to comprehend.|
-| As a tourist, I would like to see the active Covid-19 cases and vaccine rate of the country I am interested in so that I would know if I can travel safely without certain limitations.| Pie charts displayed are filtered by country and show the percentages of people vaccinated and partially vaccinated.|
-|As a citizen, I would like to see my own country's progress in fighting Covid-19 and show whenever I should begin taking necessary health measures when I see the cases increasing.| Charts displayed should be easy for users to comprehend.|
+| As a researcher, I would like to see how the guests gets affected by their overall dining experience.| Reviews are displayed per restaurant that is registered in the site. Users can state what they think was good or what was bad about their experience. |
+| As a government agent, I would like to see which restaurants are highly rated as the food and beverage industry businesses also helps the country's economy and tourism.| Site provides data per restaurant and shows which one's have 5-star ratings.|
+| As a tourist, I would like to see which restaurant is worth the visit and can provide us which best recommendation for food.| The site asks the users which food they ordered and what they think about it. It'll be easy for the user to know which dish to try.|
+|As a citizen, I would like to see my own country's best restaurants.| Site provides search options so the users can easily see or check if the restaurant they're interested in is actually worth the visit.|
 
 ### TEST CASES
 
