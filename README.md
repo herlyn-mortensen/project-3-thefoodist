@@ -44,6 +44,7 @@ The sites main feature is to the collection of restaurant reviews - the users ca
 
 For the bugs and limitations,the site that the /'review'/:reviewID url which is part of the "edit" feature - is not responding to the css link I created, making it look messy. Lastly, the .env file which was placed on the .gitignore is still showing on this repository. 
 
+### USER STORIES
 
 | USER STORIES | ACCEPTANCE CRITERIA(S) |
 | ---- | ----- |
