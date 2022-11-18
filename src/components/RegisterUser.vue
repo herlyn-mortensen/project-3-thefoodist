@@ -40,7 +40,7 @@
       <button class="submitButton"
         text="Register"
         link=""
-        v-on:click="regsiter">Register
+        v-on:click="register">Register
       </button>
       
       
@@ -50,6 +50,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+const {BASE_URL} = require('../../prod.env')
 
 export default {
   data: function () {
@@ -89,10 +91,24 @@ export default {
   components: {
     
   },
-  methods: {
-    regsiter: function () {
-      this.buttonHaveBeenClicked = true;
-    },
+  methods: {       
+    // Submit Data for registration
+    register: async function(){
+      console.log(BASE_URL, " ", )
+      try{
+        await axios({
+          method: "POST",
+          url:BASE_URL + "/user/register", 
+          data: {
+            email: this.username,
+            password: this.password
+          }
+        })
+        alert("Successfully created Account: "+ this.username )
+      }catch (error){
+        alert(error.code)
+      }
+    }
   },
 };
 </script>

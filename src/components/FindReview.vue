@@ -66,15 +66,13 @@
 
 <script>
 import axios from 'axios';
-
-  // import reviewCard from "./atom/reviewCard.vue";
 const {BASE_URL} = require('../../prod.env')
 
 export default {
   name: "FindReview",
   components: {
     // reviewCard,
-  },
+  },  
   data: function () {
     console.log(BASE_URL);
   axios({
@@ -107,7 +105,8 @@ export default {
       })
       return filtered
     }
-  }
+  },
+  
 };
 </script>
 

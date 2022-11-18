@@ -8,8 +8,7 @@
 <script>
 import axios from "axios";
 // import reviewCard from "./atom/reviewCard.vue";
-import { Server } from "../../config";
-const BASE_URL = Server.BASE_URL;
+const {BASE_URL} = require('../../prod.env')
 
 export default {
   name: "HomePage",

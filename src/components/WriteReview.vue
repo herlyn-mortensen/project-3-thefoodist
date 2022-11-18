@@ -112,8 +112,7 @@
 <script>
 import Uploadcare from 'uploadcare-vue'
 import axios from 'axios'
-import {Server} from '../../config'
-const BASE_URL = Server.BASE_URL
+const {BASE_URL} = require('../../prod.env')
 
 export default {
   name: "WriteReview",
