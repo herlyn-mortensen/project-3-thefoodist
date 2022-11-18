@@ -4,7 +4,7 @@
     <div class="boundary">
       <form>
         <label class="label-find">Restaurant Name</label>
-        <input type="text" class="form-control-find" name="restaurant" />
+        <input type="text" class="form-control-find" name="restaurant" v-model="restaurant"/>
       </form>
 
       <div class="container">
@@ -29,7 +29,7 @@
       <h1>Reviews</h1>
 
       <div class="card-container">
-        <div class="card" v-for="(item, index) in reviews" v-bind:key="index">
+        <div class="card" v-for="(item, index) in filteredRestaurant" v-bind:key="index">
           <div class="image-container">
             <img :src="item.imageUrl" class="image" alt="..." />
           </div>
@@ -83,13 +83,31 @@ export default {
     })
     .then(async res => {
       this.reviews = res.data
+      console.log("data created")
     })
     return {
-      reviews: [
-        
-      ],
+      reviews: [],
+      restaurant:''
     };
   },
+  computed:{
+    filteredRestaurant: function(){
+      if (!this.restaurant) {
+        return this.reviews
+      }
+      let filtered = this.reviews.filter((eachReview) =>{  
+        if(eachReview.restaurant){
+          const search = eachReview.restaurant.toLowerCase()
+          if (search === this.restaurant.toLowerCase()) {
+            return eachReview
+          }
+        }
+        // console.log(eachReview)      
+        // return eachReview.restaurant.toLowerCase().includes(this.restaurant.toLowerCase())
+      })
+      return filtered
+    }
+  }
 };
 </script>
 
