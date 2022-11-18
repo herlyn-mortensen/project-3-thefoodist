@@ -2,27 +2,6 @@
   <div id="homepage">
     <img alt="hero image" src="../assets/logo.png" />
     <img alt="hero image" src="../assets/text.png" />
-
-    <!-- Cards Section -->
-    <div class="reviewContainer">
-      <h1>Reviews</h1>
-
-      <div class="card-container">
-        <div class="card" v-for="(item, index) in reviews" v-bind:key="index">
-          <div class="image-container">
-            <img :src="item.imageUrl" class="image" alt="..." />
-          </div>
-          <div class="card-body">
-            <h2 class="card-title">{{ item.title }}</h2>
-            <p class="card-text">{{ item.date }}</p>
-            <p class="card-text">{{ item.cuisine }}</p>
-            <p class="card-text">{{ item.foodOrdered }}</p>
-            <p class="card-text">{{ item.review }}</p>
-            <a href="#" class="btn btn-primary">View Review</a>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
