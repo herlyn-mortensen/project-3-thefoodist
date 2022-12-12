@@ -135,7 +135,6 @@ export default {
           method: 'GET',
           url: BASE_URL + `/review`,
         }).then(res => {
-          console.log(res)
           this.reviews = res.data
         })
       }).catch(error => {
