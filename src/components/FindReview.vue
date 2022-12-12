@@ -50,10 +50,20 @@
             <div v-else-if="item.ratings==5" class="card-text"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>                        
             </div>
             <p class="card-text">{{ item.review }}</p>            
-            
-            <input type="submit" class="btn btn-dark mt-3 submitButton" value="Delete" />
-            <textarea class="commentbox" />
-            <input type="submit" class="btn btn-dark mt-3 submitButton" value="Comment"/>
+            <!--Comment Area-->
+            <div>
+              <p>Comments</p>
+              <div class="card" v-for="(comment, commentIndex) in item.comments" v-bind:key="commentIndex">
+                <div>
+                  <h4>{{ comment.review }}</h4>
+                  <p>- {{ comment.nickname }}</p>
+                  <input type="submit" class="btn btn-dark mt-3 submitButton" value="Delete" v-on:click="deleteComment(comment._id)"/>
+                </div>
+              </div>
+            </div>
+            <input type="submit" class="btn btn-dark mt-3 submitButton" value="Delete"/>
+            <textarea class="commentbox" v-model="comments[item._id]" v-on:keyup="(ref) => commenting(index, item._id, ref)"/>
+            <input type="submit" class="btn btn-dark mt-3 submitButton" v-on:click="postComment(item._id)" value="Comment"/>
           </div>
         </div>
       </div>
@@ -74,8 +84,7 @@ export default {
     // reviewCard,
   },  
   data: function () {
-    console.log(BASE_URL);
-  axios({
+    axios({
       url: BASE_URL + "/review",
       method: "GET",
     })
@@ -83,7 +92,9 @@ export default {
       this.reviews = res.data
       console.log("data created")
     })
+
     return {
+      comments: [],
       reviews: [],
       restaurant:''
     };
@@ -106,6 +117,49 @@ export default {
       return filtered
     }
   },
+  methods: {
+    commenting: function(index, itemId, ref) {
+      this.comments[itemId] = ref.target.value
+    },
+    postComment: function (itemId) {
+      axios({
+        method: 'POST',
+        url: BASE_URL + `/reviews/${itemId}/comments`,
+        data: {
+          review: this.comments[itemId],
+        }
+      }).then(() => {
+        this.comments[itemId] = ''
+        // Refetch the review list
+        axios({
+          method: 'GET',
+          url: BASE_URL + `/review`,
+        }).then(res => {
+          console.log(res)
+          this.reviews = res.data
+        })
+      }).catch(error => {
+        console.log(error.data)
+      })
+    },
+    deleteComment: function(commentId) {
+        axios({
+          method: 'DELETE',
+          url: BASE_URL + `/comments/${commentId}`,
+        }).then(() => {
+          axios({
+            method: 'GET',
+            url: BASE_URL + `/review`,
+          }).then(res => {
+            this.reviews = res.data
+            alert('Comment Deleted')
+          })
+        }).catch(error => {
+          console.log(error.data)
+        })
+    }
+  }
+
   
 };
 </script>
