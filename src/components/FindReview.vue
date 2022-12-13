@@ -4,16 +4,29 @@
     <div class="boundary">
       <form>
         <label class="label-find">Restaurant Name</label>
-        <input type="text" class="form-control-find" name="restaurant" v-model="restaurant"/>
+        <input
+          type="text"
+          class="form-control-find"
+          name="restaurant"
+          v-model="restaurant"
+        />
       </form>
 
       <div class="container">
         <div class="row">
           <div class="col-sm">
-            <input type="submit" class="btn btn-dark mt-3 submitButton" value="Search" />
+            <input
+              type="submit"
+              class="btn btn-dark mt-3 submitButton"
+              value="Search"
+            />
           </div>
           <div class="col-sm">
-            <input type="submit" class="btn btn-dark mt-3 submitButton" value="Delete" />
+            <input
+              type="submit"
+              class="btn btn-dark mt-3 submitButton"
+              value="Delete"
+            />
           </div>
           <div class="col-sm">
             <input
@@ -24,142 +37,196 @@
           </div>
         </div>
 
-   <!-- Cards Section -->
-    <div class="reviewContainer">
-      <h1>Reviews</h1>
+        <!-- Cards Section -->
+        <div class="reviewContainer">
+          <h1>Reviews</h1>
 
-      <div class="card-container">
-        <div class="card" v-for="(item, index) in filteredRestaurant" v-bind:key="index">
-          <div class="image-container">
-            <img :src="item.imageUrl" class="image" alt="..." />
-          </div>
-          <div class="card-body">
-            <h2 class="card-title">{{ item.title }}</h2>
-            <h3 class="card-title">{{ item.restaurant }}</h3>
-            <p class="card-text">{{ item.date }}</p>
-            <p class="card-text">{{ item.cuisine }}</p>
-            <p class="card-text">{{ item.foodOrdered }}</p>
-            
-            <!-- Stars rating -->
-            <div style="display:flex">
-            <p>Rating: </p>
-            <div      v-if="item.ratings==1" class="card-text"><i class="fa-solid fa-star"></i></div>
-            <div v-else-if="item.ratings==2" class="card-text"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-            <div v-else-if="item.ratings==3" class="card-text"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-            <div v-else-if="item.ratings==4" class="card-text"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-            <div v-else-if="item.ratings==5" class="card-text"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>                        
-            </div>
-            <p class="card-text">{{ item.review }}</p>            
-            <!--Comment Area-->
-            <div>
-              <p>Comments</p>
-              <div class="card" v-for="(comment, commentIndex) in item.comments" v-bind:key="commentIndex">
-                <div>
-                  <h4>{{ comment.review }}</h4>
-                  <p>- {{ comment.nickname }}</p>
-                  <input type="submit" class="btn btn-dark mt-3 submitButton" value="Delete" v-on:click="deleteComment(comment._id)"/>
+          <div class="card-container">
+            <div
+              class="card"
+              v-for="(item, index) in filteredRestaurant"
+              v-bind:key="index"
+            >
+              <div class="image-container">
+                <img :src="item.imageUrl" class="image" alt="..." />
+              </div>
+              <div class="card-body">
+                <h2 class="card-title">{{ item.title }}</h2>
+                <h3 class="card-title">{{ item.restaurant }}</h3>
+                <p class="card-text">{{ item.date }}</p>
+                <p class="card-text">{{ item.cuisine }}</p>
+                <p class="card-text">{{ item.foodOrdered }}</p>
+
+                <!-- Stars rating -->
+                <div style="display: flex">
+                  <p>Rating:</p>
+                  <div v-if="item.ratings == 1" class="card-text">
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                  <div v-else-if="item.ratings == 2" class="card-text">
+                    <i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i>
+                  </div>
+                  <div v-else-if="item.ratings == 3" class="card-text">
+                    <i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i>
+                  </div>
+                  <div v-else-if="item.ratings == 4" class="card-text">
+                    <i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i>
+                  </div>
+                  <div v-else-if="item.ratings == 5" class="card-text">
+                    <i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i>
+                  </div>
                 </div>
+                <p class="card-text">{{ item.review }}</p>
+                <!--Comment Area-->
+                <div>
+                  <p>Comments</p>
+                  <div
+                    class="card"
+                    v-for="(comment, commentIndex) in item.comments"
+                    v-bind:key="commentIndex"
+                  >
+                    <div>
+                      <p>{{ comment.review }}</p>
+                      <input
+                        type="submit"
+                        class="btn btn-dark mt-3 submitButton"
+                        value="Delete"
+                        v-on:click="deleteComment(comment._id)"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <input
+                  type="submit"
+                  class="btn btn-dark mt-3 submitButton"
+                  value="Edit"
+                />
+                <input
+                  type="submit"
+                  class="btn btn-dark mt-3 submitButton"
+                  value="Delete"
+                />
+                <textarea
+                  class="commentbox"
+                  v-model="comments[item._id]"
+                  v-on:keyup="(ref) => commenting(index, item._id, ref)"
+                />
+                <input
+                  type="submit"
+                  class="btn btn-dark mt-3 submitButton"
+                  v-on:click="postComment(item._id)"
+                  value="Comment"
+                />
               </div>
             </div>
-            <input type="submit" class="btn btn-dark mt-3 submitButton" value="Delete"/>
-            <textarea class="commentbox" v-model="comments[item._id]" v-on:keyup="(ref) => commenting(index, item._id, ref)"/>
-            <input type="submit" class="btn btn-dark mt-3 submitButton" v-on:click="postComment(item._id)" value="Comment"/>
           </div>
         </div>
-      </div>
-    </div>
-
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-const {BASE_URL} = require('../../prod.env')
+import axios from "axios";
+const { BASE_URL } = require("../../prod.env");
 
 export default {
   name: "FindReview",
   components: {
     // reviewCard,
-  },  
+  },
   data: function () {
     axios({
       url: BASE_URL + "/review",
       method: "GET",
-    })
-    .then(async res => {
-      this.reviews = res.data
-      console.log("data created")
-    })
+    }).then(async (res) => {
+      this.reviews = res.data;
+      console.log("data created");
+    });
 
     return {
       comments: [],
       reviews: [],
-      restaurant:''
+      restaurant: "",
     };
   },
-  computed:{
-    filteredRestaurant: function(){
+  computed: {
+    filteredRestaurant: function () {
       if (!this.restaurant) {
-        return this.reviews
+        return this.reviews;
       }
-      let filtered = this.reviews.filter((eachReview) =>{  
-        if(eachReview.restaurant){
-          const search = eachReview.restaurant.toLowerCase()
+      let filtered = this.reviews.filter((eachReview) => {
+        if (eachReview.restaurant) {
+          const search = eachReview.restaurant.toLowerCase();
           if (search === this.restaurant.toLowerCase()) {
-            return eachReview
+            return eachReview;
           }
         }
-        // console.log(eachReview)      
+        // console.log(eachReview)
         // return eachReview.restaurant.toLowerCase().includes(this.restaurant.toLowerCase())
-      })
-      return filtered
-    }
+      });
+      return filtered;
+    },
   },
   methods: {
-    commenting: function(index, itemId, ref) {
-      this.comments[itemId] = ref.target.value
+    // Record the comment in the TextArea
+    commenting: function (index, itemId, ref) {
+      this.comments[itemId] = ref.target.value;
     },
+    // Submit the comment according to the selected item
     postComment: function (itemId) {
       axios({
-        method: 'POST',
+        method: "POST",
         url: BASE_URL + `/reviews/${itemId}/comments`,
         data: {
           review: this.comments[itemId],
-        }
-      }).then(() => {
-        this.comments[itemId] = ''
+        },
+      })
+        .then(() => {
+          this.comments[itemId] = "";
+          // Refetch the review list
+          axios({
+            method: "GET",
+            url: BASE_URL + `/review`,
+          }).then((res) => {
+            this.reviews = res.data;
+          });
+        })
+        .catch((error) => {
+          console.log(error.data);
+        });
+    },
+    // Delete the comment according to the selected item
+    deleteComment: function (commentId) {
+      axios({
+        method: "DELETE",
+        url: BASE_URL + `/comments/${commentId}`,
+      })
+      .then(() => {
         // Refetch the review list
         axios({
-          method: 'GET',
+          method: "GET",
           url: BASE_URL + `/review`,
-        }).then(res => {
-          this.reviews = res.data
-        })
-      }).catch(error => {
-        console.log(error.data)
+        }).then((res) => {
+          this.reviews = res.data;
+          alert("Comment Deleted");
+        });
       })
-    },
-    deleteComment: function(commentId) {
-        axios({
-          method: 'DELETE',
-          url: BASE_URL + `/comments/${commentId}`,
-        }).then(() => {
-          axios({
-            method: 'GET',
-            url: BASE_URL + `/review`,
-          }).then(res => {
-            this.reviews = res.data
-            alert('Comment Deleted')
-          })
-        }).catch(error => {
-          console.log(error.data)
-        })
-    }
-  }
-
-  
+      .catch((error) => {
+        console.log(error.data);
+      });
+    }  
+  },
 };
 </script>
 
@@ -186,9 +253,9 @@ export default {
   width: 100%;
 }
 
-.submitButton{
+.submitButton {
   width: 100%;
-  height:48px;
+  height: 48px;
 }
 
 .boundary {
@@ -196,12 +263,12 @@ export default {
   margin-left: auto;
   margin-right: auto;
 }
-.image{
+.image {
   max-width: 100%;
 }
-.commentbox{
-  margin-top:20px;
-  
-  width:100%;
+.commentbox {
+  margin-top: 20px;
+
+  width: 100%;
 }
 </style>
