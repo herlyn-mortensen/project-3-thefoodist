@@ -16,7 +16,13 @@ This site targets food lovers and it focuses on online reviews of restaurants ar
 
 #### TAKE NOTE!
 
-As the site runs on Vue 2. In order to view the website live, please follow these steps:
+As the site runs on Vue 2. In order to view the website live, please follow this link and steps:
+
+https://docs.google.com/document/d/1V7sqYcXr3ebdTYccith5OQLRfVkR74edpXp5m_WsXWo/edit?usp=sharing
+
+Here is also the Express extension which should also be run:
+https://github.com/herlyn-mortensen/foodist-express
+
 
 ### FIVE PLANES OF UX/UI
 
