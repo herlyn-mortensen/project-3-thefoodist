@@ -1,6 +1,6 @@
 
 <template>
-  <div id="writereviewpage">
+  <div id="editreviewpage">
     <h2 class="write-review-section">Write Review</h2>
 
     <div class="write-review-section">
@@ -14,26 +14,26 @@
         </Uploadcare>
         <div>
           <label class="label-write">Restaurant:</label>
-          <input type="text" name="restaurant" class="form-control" v-on:input="onTextChange" />
+          <input type="text" name="restaurant" class="form-control" v-on:input="onTextChange" v-model="form['restaurant']"/>
         </div>
         <div>
           <label class="label-write">Title:</label>
-          <input type="text" name="title" class="form-control" v-on:input="onTextChange"/>
+          <input type="text" name="title" class="form-control" v-on:input="onTextChange" v-model="form['title']"/>
         </div>
         <div>
           <label class="label-write">Date:</label>
-          <input type="text" name="date" class="form-control" v-on:input="onTextChange"/>
+          <input type="text" name="date" class="form-control" v-on:input="onTextChange" v-model="form['date']"/>
         </div>
         <div>
           <label class="label-write">Cuisine:</label>
-          <input type="text" name="cuisine" class="form-control" v-on:input="onTextChange"/>
+          <input type="text" name="cuisine" class="form-control" v-on:input="onTextChange" v-model="form['cuisine']"/>
         </div>
         <div>
           <label class="label-write">Food ordered:</label>
-          <input type="text" name="foodordered" class="form-control" v-on:input="onTextChange"/>
+          <input type="text" name="foodordered" class="form-control" v-on:input="onTextChange" v-model="form['foodOrdered']"/>
         </div>
         <div class="section">
-          <label class="label-write">Write Review</label>
+          <label class="label-write">Edit Review</label>
           <div>
             <textarea
               class="form-control-review"
@@ -41,6 +41,7 @@
               rows="4"
               cols="50"
               v-on:input="onTextChange"
+              v-model="form['review']"
             ></textarea>
           </div>
         </div>
@@ -102,7 +103,7 @@
           ></label>
         </div>
         <div>
-          <input type="submit" class="btn btn-dark mt-3" v-on:click="onSubmit"/>
+          <input class="btn btn-dark mt-3" value="Update" v-on:click="onSubmit"/>
         </div>
       </form>
     </div>
@@ -116,8 +117,21 @@ const {BASE_URL} = require('../../prod.env')
 
 export default {
   name: "EditReview",
-  data() {
+  data: function () {
+    const params = new URLSearchParams(window.location.href)
+    let reviewId = '';
+    params.forEach(data => {
+      reviewId = data
+    })
+    axios({
+      method: 'GET',
+      url: BASE_URL + '/review/' + reviewId
+    }).then(review => {
+     this.form = review.data
+     this.imageUrl = review.data.imageUrl
+    })
     return {
+      reviewId: reviewId,
       form: {},
       imageUrl: null
     }
@@ -131,9 +145,9 @@ export default {
     },  
     onSubmit() {
       // Submit Data
-      axios.post(BASE_URL + "/review", {...this.form, imageUrl: this.imageUrl})
-      .then((res) => {
-        console.log(res)
+      axios.put(BASE_URL + "/review/" + this.reviewId, {...this.form, imageUrl: this.imageUrl})
+      .then(() => {
+        alert('Updated!')
       })
     },
     uploadImageSuccess(x) {

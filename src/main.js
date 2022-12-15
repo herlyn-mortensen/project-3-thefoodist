@@ -10,7 +10,7 @@ import LogInBusiness from "@/components/LogInBusiness";
 import LogInUser from "@/components/LogInUser";
 import RegisterUser from "@/components/RegisterUser";
 import WriteReview from "@/components/WriteReview";
-
+import EditReview from "@/components/EditReview";
 
 Vue.config.productionTip = true
 Vue.use(Router);
@@ -46,6 +46,11 @@ const router = new Router({
     path: "/WriteReview",
     name: "WriteReview",
     component: WriteReview,
+   },
+   {
+    path: "/EditReview",
+    name: "EditReview",
+    component: EditReview
    }
 
  ]

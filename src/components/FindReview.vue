@@ -106,16 +106,18 @@
                     </div>
                   </div>
                 </div>
-                <input
-                  type="submit"
-                  class="btn btn-dark mt-3 submitButton"
-                  value="Edit"
-                />
-                <input
-                  type="submit"
-                  class="btn btn-dark mt-3 submitButton"
-                  value="Delete"
-                />
+                <div class="container-flex-column">
+             
+                  <router-link :to="{ path: '/EditReview', query: { id: item._id }}" class="btn btn-dark mt-3 submitButton" >
+                    <p class="buttonText">Edit</p>
+                  </router-link>
+
+                  <input
+                    type="submit"
+                    class="btn btn-light mt-3 bordered submitButton"
+                    value="Delete"
+                  />
+                </div>
                 <textarea
                   class="commentbox"
                   v-model="comments[item._id]"
@@ -151,7 +153,6 @@ export default {
       method: "GET",
     }).then(async (res) => {
       this.reviews = res.data;
-      console.log("data created");
     });
 
     return {
@@ -256,6 +257,7 @@ export default {
 .submitButton {
   width: 100%;
   height: 48px;
+  margin: 10px;
 }
 
 .boundary {
@@ -270,5 +272,18 @@ export default {
   margin-top: 20px;
 
   width: 100%;
+}
+
+.container-flex-column {
+  display: flex
+}
+
+.bordered {
+  border: 2px solid #212529
+}
+
+.buttonText {
+  color: white;
+  margin-top: 5px;
 }
 </style>
