@@ -1,4 +1,4 @@
 'use strict'
 module.exports = {
-    BASE_URL : 'https://5000-herlynmorte-foodistexpr-stlbyabtu81.ws-us79.gitpod.io'
+    BASE_URL : 'https://5000-herlynmorte-foodistexpr-g7rvpv3po54.ws-us79.gitpod.io'
 }

@@ -116,6 +116,7 @@
                     type="submit"
                     class="btn btn-light mt-3 bordered submitButton"
                     value="Delete"
+                    v-on:click="() => deleteReview(item._id)"
                   />
                 </div>
                 <textarea
@@ -180,6 +181,23 @@ export default {
     },
   },
   methods: {
+    // Deleting a single review
+    deleteReview: function(itemId) {
+        axios({
+          method: "DELETE",
+          url: BASE_URL + `/review/${itemId}`,
+        })
+        .then(() => {
+          // Refetch the review list
+          axios({
+            method: "GET",
+            url: BASE_URL + `/review`,
+          }).then((res) => {
+            this.reviews = res.data;
+            alert('Removed review')
+          });
+        })
+    },
     // Record the comment in the TextArea
     commenting: function (index, itemId, ref) {
       this.comments[itemId] = ref.target.value;
