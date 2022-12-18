@@ -14,7 +14,9 @@ This site targets food lovers and it focuses on online reviews of restaurants ar
 
 **FIGMA [DESIGN](https://www.figma.com/file/DCI4Nlu5kR6pCmxHsUSTxm/Project-3?node-id=0%3A1)** :tent:
 
-#### TAKE NOTE!
+**LIVE SITE [DEMO](https://herlyn-mortensen.github.io/project-3-thefoodist/)** :tent:
+
+#### :exclamation: TAKE NOTE :exclamation:
 
 As the site runs on Vue 2. In order to view the website live, please follow this link and steps:
 
